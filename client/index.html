@@ -6,6 +6,11 @@
   {{> loginNavBar}}
 
   <div class="container">
-    test
+    {{#if signedIn}}
+      hello
+    {{else}}
+      <h3>Hello</h3>
+      <p>Please, sign in to start.</p>
+    {{/if}}
   </div>
 </body>
