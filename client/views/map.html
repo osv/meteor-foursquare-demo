@@ -1,5 +1,25 @@
 <template name="map">
-  <div class="mapbox-container">
-    <div id="map"></div>
+  <div class="row">
+    <div class="col-sm-12">
+      {{> input}}
+    </div>
   </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="mapbox-container">
+        <div id="map"></div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<template name="input">
+  <form class="form-horizontal">
+    <div class="form-group">
+      <label class="col-sm-1 control-label">Query</label>
+      <div class="col-sm-11">
+        <input class="form-control" name="query" type="text" placeholder="restaurant, etc">
+      </div>
+    </div>
+  </form>
 </template>

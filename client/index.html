@@ -5,13 +5,9 @@
 <body>
   {{> loginNavBar}}
 
-  <div class="container">
+  <div class="container-fluid">
     {{#if signedIn}}
-      <div class="row">
-        <div class="col-sm-12">
-          {{> map}}
-        </div>
-      </div>
+      {{>map}}
     {{else}}
       <h3>Hello</h3>
       <p>Please, sign in to start.</p>
