@@ -1,4 +1,4 @@
-<head>  
+<head>
   <title>jssolutionsdev test assignment</title>
   <meta name="viewport" content="width=0, initial-scale=0.7, user-scalable=no">
 </head>
@@ -7,7 +7,11 @@
 
   <div class="container">
     {{#if signedIn}}
-      hello
+      <div class="row">
+        <div class="col-sm-12">
+          {{> map}}
+        </div>
+      </div>
     {{else}}
       <h3>Hello</h3>
       <p>Please, sign in to start.</p>
