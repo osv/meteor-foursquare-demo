@@ -13,3 +13,5 @@ export FOURSQUARE_ID=XYZ123
 export FOURSQUARE_SECRET=ZYZ456
 meteor
 ```
+
+![screenshot of web page](https://github.com/osv/meteor-foursquare-demo/raw/master/screenshot.jpg)
