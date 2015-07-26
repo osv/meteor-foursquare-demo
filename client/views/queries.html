@@ -1,8 +1,13 @@
 <template name="queries">
+  <h3>Last your queries:</h3>
   <div class="row">
     {{#each queries}}
       <div class="col-md-2 col-sm-3 col-xs-6">
         {{> query}}
+      </div>
+    {{else}}
+      <div class="col-sm-12">
+        Your query list is empty.
       </div>
     {{/each}}
   </div>
