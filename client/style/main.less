@@ -1,3 +1,12 @@
+@import "./lib/custom.bootstrap.import.less";
+
+// mixing
+.animation(@animation) {
+  -webkit-animation: @animation;
+       -o-animation: @animation;
+          animation: @animation;
+}
+
 // map box
 .mapbox-container {
   height: 600px;
@@ -17,4 +26,21 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     word-break: break-all;
+}
+
+.ani-rise {
+    .animation(rise linear 1s);
+}
+
+@-webkit-keyframes rise {.rise-keys;}
+@-o-keyframes rise {.rise-keys;}
+@keyframes rise {.rise-keys;}
+
+.rise-keys() {
+    0% {
+        background: #dd0;
+    }
+    100% {
+        background: @body-bg;
+    }
 }
