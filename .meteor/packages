@@ -5,8 +5,6 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 nemo64:bootstrap
 ian:accounts-ui-bootstrap-3
 accounts-google
