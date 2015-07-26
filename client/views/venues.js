@@ -58,6 +58,11 @@ function exportToCsv(filename, rows) {
 Template.venues.helpers({
   venueList: function() {
     return Session.get('venues');
+  },
+
+  venuesCount: function() {
+    var venues = Session.get('venues') || [];
+    return venues.length;
   }
 });
 
