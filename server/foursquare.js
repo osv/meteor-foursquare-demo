@@ -28,6 +28,7 @@ Meteor.methods({
           client_secret: foursquare_secret,
           v: 20150606,
           query: query,
+          limit: 50,
           ll: '' + lat + ',' + lng,
     };
 
