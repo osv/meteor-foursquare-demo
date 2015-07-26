@@ -8,7 +8,7 @@ if (! foursquare_secret || ! foursquare_id) {
 
 Meteor.methods({
   // return array of venues
-  'foursquare-search': function(lat, lng, query) {
+  'foursquare-search': function(lat, lng, query, radius) {
 
     if (! foursquare_secret || ! foursquare_id) {
       throw new Meteor.Error('Foursqaure not configured');
@@ -21,6 +21,7 @@ Meteor.methods({
     check(lat, Number);
     check(lng, Number);
     check(query, String);
+    check(radius, Number);
 
     var result,
         params = {
@@ -28,6 +29,7 @@ Meteor.methods({
           client_secret: foursquare_secret,
           v: 20150606,
           query: query,
+          radius: radius,
           limit: 50,
           ll: '' + lat + ',' + lng,
     };
@@ -47,6 +49,7 @@ Meteor.methods({
       lat: lat,
       lng: lng,
       query: query,
+      radius: radius,
     });
 
     return result.data.response.venues;

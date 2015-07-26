@@ -15,6 +15,7 @@ Template.map.onRendered(function () {
     if (Mapbox.loaded()) {
       L.mapbox.accessToken = 'pk.eyJ1Ijoib2xleCIsImEiOiIwN2FkZTc5MDI0ODg2NTZiNGRjZjI2NWZjMzhjYWQ0ZiJ9.z2IjKFJX9EMtn_djhbe_7w';
       self.map = L.mapbox.map('map', 'olex.n0b9h12a');
+      MAP=self.map;
     }
   });
 });
@@ -29,9 +30,11 @@ Template.map.events({
         markers = t.markers,
         location = map.getCenter(),
         lat = location.lat,
-        lng = location.lng;
+        lng = location.lng,
+        bounds = map.getBounds(),
+        radius = bounds._southWest.distanceTo(bounds._northEast) / 2.0;
 
-    Meteor.call('foursquare-search', lat, lng, query, function(err, venues) {
+    Meteor.call('foursquare-search', lat, lng, query, radius, function(err, venues) {
       if (err) {
         console.log(err);
         return;
