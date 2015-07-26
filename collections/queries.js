@@ -50,7 +50,7 @@ if (Meteor.isClient) {
 // publication
 if (Meteor.isServer) {
 
-  // publish user's last 50 queries
+  // publish user's last 10 queries
   Meteor.publish('queries', function() {
     var userId = this.userId,
         query = {
@@ -60,7 +60,7 @@ if (Meteor.isServer) {
           sort: {
             createdAt: -1
           },
-          limit: 50
+          limit: 10
         };
 
     return Queries.find(query, options);

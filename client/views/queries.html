@@ -1,45 +1,37 @@
 <template name="queries">
-  <h3>Last your queries:</h3>
+  <h3>Recent queries:</h3>
   <div class="row">
-    {{#each queries}}
-      <div class="col-md-2 col-sm-3 col-xs-6">
-        {{> query}}
-      </div>
-    {{else}}
-      <div class="col-sm-12">
+    <div class="col-sm-12">
+      {{#if queries}}
+        <table class="table-hover table table-condensed table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Latitude</th>
+              <th>Longitude</th>
+              <th>Radius</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each queries}}
+              {{> query}}
+            {{/each}}
+          </tbody>
+        </table>
+      {{else}}
         Your query list is empty.
-      </div>
-    {{/each}}
+      {{/if}}
+    </div>
   </div>
 </template>
 
 <template name="query">
-  <div class="query-item ani-rise">
-    <div class="row">
-      <div class="col-xs-3">
-        Query:
-      </div>
-      <div class="col-xs-9 ellipsis">
-        <span title="{{query}}">{{query}}</span>
-      </div>
-      <div class="col-xs-3">
-        lat:
-      </div>
-      <div class="col-xs-9">
-        {{toFixed lat 4}}
-      </div>
-      <div class="col-xs-3">
-        lng:
-      </div>
-      <div class="col-xs-9">
-        {{toFixed lng 4}}
-      </div>
-      <div class="col-xs-3">
-        Radius:
-      </div>
-      <div class="col-xs-9">
-        {{toFixed radius 1}}
-      </div>
-    </div>
-  </div>
+  <tr>
+    <td><strong>{{query}}</strong></td>
+    <td>{{toFixed lat 6}}</td>
+    <td>{{toFixed lng 6}}</td>
+    <td>{{radiusKm}}km</td>
+    <td>{{createdAt}}</td>
+  </tr>
 </template>
