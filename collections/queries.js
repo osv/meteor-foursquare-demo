@@ -28,7 +28,12 @@ var schema = new SimpleSchema({
 
   query: {
     type: String
-  }
+  },
+
+  radius: {
+    type: Number,
+    decimal: true,
+  },
 });
 
 Queries = new Meteor.Collection('queries');
