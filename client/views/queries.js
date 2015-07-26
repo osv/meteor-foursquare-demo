@@ -7,6 +7,10 @@ Template.queries.helpers({
     };
     // don't need filter by userId
     return Queries.find({}, options);
+  },
+
+  haveQueries: function() {
+    return Queries.find().count();
   }
 });
 

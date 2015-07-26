@@ -1,8 +1,8 @@
 <template name="queries">
-  <h3>Recent queries:</h3>
-  <div class="row">
-    <div class="col-sm-12">
-      {{#if queries}}
+  {{#if haveQueries}}
+    <h3>Recent queries:</h3>
+    <div class="row">
+      <div class="col-sm-12">
         <table class="table table-condensed table-striped">
           <thead>
             <tr>
@@ -19,11 +19,9 @@
             {{/each}}
           </tbody>
         </table>
-      {{else}}
-        Your query list is empty.
-      {{/if}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </template>
 
 <template name="query">
