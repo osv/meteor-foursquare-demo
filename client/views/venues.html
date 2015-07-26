@@ -1,0 +1,29 @@
+<template name="venues">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>Venues</h3>
+      <table class="table-hover table table-condensed table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Address</th>
+            <th>Latitude</th>
+            <th>longitude</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each venueList}}
+            <tr>
+              <td>{{name}}</td>
+              <td>{{location.city}}</td>
+              <td>{{location.address}}</td>
+              <td>{{location.lat}}</td>
+              <td>{{location.lng}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

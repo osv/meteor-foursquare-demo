@@ -62,8 +62,11 @@ Template.map.events({
         markers.addLayer(marker);
       });
 
+      // Simply save  venues in session,  because array of  venues not
+      // changed in future and no need to use in-memory collection
+      Session.set('venues', venues);
+
       map.addLayer(markers);
-      console.log('Venues', venues);
     });
   }
 });
