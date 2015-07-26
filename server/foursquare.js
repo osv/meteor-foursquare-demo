@@ -41,6 +41,14 @@ Meteor.methods({
       throw new Meteor.Error('Foursquare api call failed');
     }
 
+    // save query in db
+    Queries.insert({
+      userId: this.userId,
+      lat: lat,
+      lng: lng,
+      query: query,
+    });
+
     return result.data.response.venues;
   },
 });
