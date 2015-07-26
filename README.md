@@ -14,4 +14,6 @@ export FOURSQUARE_SECRET=ZYZ456
 meteor
 ```
 
+App available online: http://foursquare.ononos.tk/
+
 ![screenshot of web page](https://github.com/osv/meteor-foursquare-demo/raw/master/screenshot.jpg)
