@@ -39,6 +39,13 @@ var schema = new SimpleSchema({
 Queries = new Meteor.Collection('queries');
 Queries.attachSchema(schema);
 
+Queries.allow({
+  // allow delete if user is owner of doc
+  remove: function (userId, doc) {
+    return doc.userId === userId;
+  },
+});
+
 // subscribe
 if (Meteor.isClient) {
 

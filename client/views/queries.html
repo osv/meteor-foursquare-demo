@@ -3,7 +3,7 @@
   <div class="row">
     <div class="col-sm-12">
       {{#if queries}}
-        <table class="table-hover table table-condensed table-striped">
+        <table class="table table-condensed table-striped">
           <thead>
             <tr>
               <th>Name</th>
@@ -28,7 +28,12 @@
 
 <template name="query">
   <tr>
-    <td><strong>{{query}}</strong></td>
+    <td>
+      <button class="btn btn-sm btn-link" data-action="remove">
+        <i class="glyphicon glyphicon-trash"></i>
+      </button>
+      <strong>{{query}}</strong>
+    </td>
     <td>{{toFixed lat 6}}</td>
     <td>{{toFixed lng 6}}</td>
     <td>{{radiusKm}}km</td>

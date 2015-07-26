@@ -22,3 +22,16 @@ Template.query.helpers({
     return radius.toFixed(1);
   }
 });
+
+Template.query.events({
+  'click [data-action="remove"]': function(e, t) {
+    console.log(this);
+    var query = this.query,
+        doc_id = this._id;
+
+    if (confirm('Remove "' + query + '"')) {
+      Queries.remove(doc_id);
+    }
+
+  }
+});
