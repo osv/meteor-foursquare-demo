@@ -1,0 +1,34 @@
+<template name="queries">
+  <div class="row">
+    {{#each queries}}
+      <div class="col-md-2 col-sm-3 col-xs-6">
+        {{> query}}
+      </div>
+    {{/each}}
+  </div>
+</template>
+
+<template name="query">
+  <div class="query-item">
+    <div class="row">
+      <div class="col-xs-3">
+        Query:
+      </div>
+      <div class="col-xs-9 ellipsis">
+        <a data-action="search" href="#">{{query}}</a>
+      </div>
+      <div class="col-xs-3">
+        lat:
+      </div>
+      <div class="col-xs-9">
+        {{toFixed lat 4}}
+      </div>
+      <div class="col-xs-3">
+        lng:
+      </div>
+      <div class="col-xs-9">
+        {{toFixed lng 4}}
+      </div>
+    </div>
+  </div>
+</template>
